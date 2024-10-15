@@ -32,4 +32,6 @@ MCMC samplers systematically sample the design space in a way that favours regio
 
 The primary goal of optimisation is to find the best solution(s) according to specific objective criteria. The process inherently involves exploring the design space to identify regions that offer optimal performance. Techniques such as gradient-based optimisation, genetic algorithms, or Bayesian optimisation navigate the design space by sampling points, evaluating their performance, and iteratively refining the search. Thus, optimisation not only seeks the best designs but also contributes to understanding the structure and characteristics of the design space.
 
+**Gradient-based optimisation**
+
 ![](figures/optimisation.png)
