@@ -4,7 +4,7 @@ A visual guide to design space exploration and optimisation
 
 ## 1. Design space
 
-Two design parameters $X_1$ and $X_2$
+Contour plot illustrating the relationship between two design parameters, $X_1$ and $X_2$, and the corresponding values of the objective function.
 
 ![](figures/design-space.png)
 
