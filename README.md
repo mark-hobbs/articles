@@ -28,4 +28,6 @@ Each point represents a single run of a computationally expensive simulation
 
 ## 5. Optimisation
 
+Gradient based optimisers
+
 ![](figures/optimisation.png)
