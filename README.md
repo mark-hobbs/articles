@@ -17,3 +17,7 @@ Contour plot illustrating the relationship between two design parameters, $X_1$ 
 Each point represents a single run of a computationally expensive simulation
 
 ![](figures/grid-search.png)
+
+## 3. Monte Carlo
+
+![](figures/monte-carlo.png)
