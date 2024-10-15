@@ -8,7 +8,7 @@ Efforts at the intersection of machine learning and simulation generally fall in
 
 ## 1. Design space
 
-Contour plot illustrating the relationship between two design parameters, $X_1$ and $X_2$, and the corresponding values of the objective function.
+Contour plot illustrating the relationship between two design parameters, $X_1$ and $X_2$, and the corresponding values of the objective function. In many engineering applications, evaluating this objective function can be extremely computationally expensive.
 
 ![](figures/design-space.png)
 
