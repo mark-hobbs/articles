@@ -25,3 +25,7 @@ Each point represents a single run of a computationally expensive simulation
 ## 4. Markov Chain Monte Carlo
 
 ![](figures/mcmc.png)
+
+## 5. Optimisation
+
+![](figures/optimisation.png)
