@@ -35,3 +35,7 @@ The primary goal of optimisation is to find the best solution(s) according to sp
 **Gradient-based optimisation**
 
 ![](figures/optimisation.png)
+
+**Genetic algorithm**
+
+![](figures/genetic-algorithm.gif)
