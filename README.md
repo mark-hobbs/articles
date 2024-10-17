@@ -42,4 +42,6 @@ The primary goal of optimisation is to find the best solution(s) according to sp
 
 ## 6. Generative model
 
+Generative models aim to infer the underlying distribution from which observed data is generated. In the engineering domain, models such as Generative Adversarial Networks (GANs) and Variational Autoencoders (VAEs) are employed to generate new design candidates by learning the distribution of existing high-performance designs. These models can create novel design configurations that retain desirable characteristics of known solutions.
+
 ![](figures/generative-model.png)
