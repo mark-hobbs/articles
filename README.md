@@ -39,3 +39,7 @@ The primary goal of optimisation is to find the best solution(s) according to sp
 **Genetic algorithm**
 
 ![](figures/genetic-algorithm.gif)
+
+## 6. Generative design
+
+![](figures/generative-design.png)
