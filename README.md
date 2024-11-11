@@ -28,7 +28,17 @@ Each point represents a single run of a computationally expensive simulation
 
 MCMC samplers systematically sample the design space in a way that favours regions with higher probability or likelihood, effectively focusing the exploration on the most probable designs. This approach is particularly useful when the goal is to understand the distribution of optimal solutions or identify regions of the design space that meet specific criteria, rather than exhaustively searching all possibilities.
 
-![](figures/mcmc.png)
+<!-- ![](figures/mcmc.png)
+![](figures/mcmc-animation.gif) -->
+
+<div style="display: flex; align-items: center;">
+    <div style="flex: 1;">
+        <img src="figures/mcmc.png" alt="Static MCMC Plot" style="width: 100%;">
+    </div>
+    <div style="flex: 1;">
+        <img src="figures/mcmc-animation.gif" alt="MCMC Animation" style="width: 100%;">
+    </div>
+</div>
 
 ## 5. Optimisation
 
