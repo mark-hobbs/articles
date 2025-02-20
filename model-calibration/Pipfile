@@ -8,6 +8,7 @@ numpy = "*"
 matplotlib = "*"
 jupyterlab = "*"
 pypd = {git = "git+https://github.com/mark-hobbs/pypd.git"}
+gpy = "*"
 
 [dev-packages]
 
