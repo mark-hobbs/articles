@@ -1,42 +1,46 @@
 from abc import ABC, abstractmethod
 
+
 class Model(ABC):
+    """
+    Abstract base class for all models
+    """
 
     def __init__(self):
         self.trained = False
 
     @abstractmethod
-    def predict(self):
-        return NotImplementedError("predict() is not implemented")
+    def predict(self, X):
+        pass
 
-    @abstractmethod
     def fit(self, X, y):
-        return NotImplementedError("fit() is not implemented")
+        raise NotImplementedError("This model type does not support training")
 
-    @abstractmethod
     def save(self):
-        return NotImplementedError("save() is not implemented")
+        raise NotImplementedError("This model type does not support saving")
 
-    @abstractmethod
     def load(self):
-        return NotImplementedError("load() is not implemented")
+        raise NotImplementedError("This model type does not support loading")
 
 
 import GPy
 import pickle
 
-class GPR:
+
+class GPR(Model):
     """
-    Gaussian Process Regression
+    Pre-trained Gaussian Process Regression model
     """
 
     def __init__(self, input_dim, kernel=None):
+        super().__init__()
         self.kernel = kernel or GPy.kern.RBF(input_dim=input_dim)
         self.model = None
 
-    def load(self, file):
-        with open(file, "rb") as f:
-            self.model = pickle.load(f)      
-
     def predict(self, X):
         return self.model.predict(X)
+
+    def load(self, file):
+        with open(file, "rb") as f:
+            self.model = pickle.load(f)
+            self.trained = True
