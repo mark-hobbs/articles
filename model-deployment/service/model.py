@@ -23,13 +23,17 @@ class Model(ABC):
         raise NotImplementedError("This model type does not support loading")
 
 
-import GPy
 import pickle
 
 
 class GPR(Model):
     """
     Pre-trained Gaussian Process Regression model
+
+    Attributes
+    ----------
+    model : GPRegression
+        An instance of a trained GPy.models.gp_regression.GPRegression model
     """
 
     def __init__(self):
