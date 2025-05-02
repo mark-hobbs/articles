@@ -5,7 +5,7 @@ from flask import jsonify
 from .model import GPR
 from .utils import json_to_ndarray
 
-model = GPR(input_dim=4)
+model = GPR()
 model.load(os.path.join("service", "pretrained-model.pkl"))
 
 

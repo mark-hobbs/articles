@@ -32,9 +32,8 @@ class GPR(Model):
     Pre-trained Gaussian Process Regression model
     """
 
-    def __init__(self, input_dim, kernel=None):
+    def __init__(self):
         super().__init__()
-        self.kernel = kernel or GPy.kern.RBF(input_dim=input_dim)
         self.model = None
 
     def predict(self, X):
