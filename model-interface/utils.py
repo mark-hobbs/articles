@@ -102,4 +102,4 @@ def setup_problem(k, alpha):
         surface_correction=True,
         notch=notch,
     )
-    model = pypd.Model(particles, bonds, penetrators, observations)
+    return pypd.Model(particles, bonds, penetrators, observations)

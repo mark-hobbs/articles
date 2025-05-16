@@ -45,7 +45,7 @@ class Beam(Model):
         self.simulation = pypd.Simulation(n_time_steps=100000, damping=0)
 
     def __call__(self, x):
-        model = setup_problem(x)
+        model = setup_problem(x[0], x[1])
         self.simulation.run(model)
 
     def get_input_size(self) -> int:
