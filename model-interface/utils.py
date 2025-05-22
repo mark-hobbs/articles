@@ -1,9 +1,39 @@
+import os
 import numpy as np
 
 import pypd
 
 mm_to_m = 1e-3
 m_to_mm = 1e3
+
+
+def load_data_file(filename="half-notched-beam.csv"):
+    """
+    Determine the location of the example and construct the path to the data
+    file dynamically.
+    """
+    file_path = os.path.join(os.getcwd(), "data", filename)
+    return np.genfromtxt(file_path, delimiter=",")
+
+
+def objective(model):
+    """
+    Mean Square Error (MSE)
+    """
+    data_file = load_data_file()
+
+    cmod = data_file[:, 0]
+    load_min = data_file[:, 1]
+    load_max = data_file[:, 2]
+    load_mean = (load_max + load_min) / 2
+
+    load_model = -np.array(model.penetrators[0].penetrator_force_history) * n_div_z
+    cmod_model = np.array(model.observations[1].history) - np.array(
+        model.observations[0].history
+    )
+
+    load_model_interp = np.interp(cmod, cmod_model[:, 0] * m_to_mm, load_model[:, 1])
+    return np.mean(np.nan_to_num(load_model_interp - load_mean, nan=0) ** 2)
 
 
 def build_particle_coordinates(dx, n_div_x, n_div_y):
@@ -31,8 +61,10 @@ def setup_problem(k, alpha):
     dx = 2.5 * mm_to_m
     length = 175 * mm_to_m
     depth = 50 * mm_to_m
+    width = 50 * mm_to_m
     n_div_x = np.rint(length / dx).astype(int)
     n_div_y = np.rint(depth / dx).astype(int)
+    n_div_z = np.rint(width / dx).astype(int)
     notch = [
         np.array([(length * 0.5) + (dx * 0.5), 0]),
         np.array([(length * 0.5) + (dx * 0.5), depth * 0.5]),
@@ -102,4 +134,5 @@ def setup_problem(k, alpha):
         surface_correction=True,
         notch=notch,
     )
+
     return pypd.Model(particles, bonds, penetrators, observations)

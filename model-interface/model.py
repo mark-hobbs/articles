@@ -34,11 +34,10 @@ class Model(ABC):
 
 import pypd
 
-from utils import setup_problem
+from utils import setup_problem, objective
 
 
 class Beam(Model):
-
 
     def __init__(self):
         super().__init__()
@@ -47,18 +46,24 @@ class Beam(Model):
     def __call__(self, x):
         model = setup_problem(x[0], x[1])
         self.simulation.run(model)
+        return float(objective(model))
 
     def get_input_size(self) -> int:
         """
         alpha and k
         """
         return 2
-    
-    def get_output_size(self) -> int:
-        return 1
 
-    def forward(self):
-        self.simulation.run(self.model)
+    def get_output_size(self) -> int:
+        return None
+
+    def forward(self, x):
+        model = setup_problem(x[0], x[1])
+        self.simulation.run(model)
 
     def fitness(self):
+        """
+        Minimise the discrepancy between the experimental load-CMOD data
+        and numerical predictions
+        """
         pass
