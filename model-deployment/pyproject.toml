@@ -1,0 +1,11 @@
+[project]
+name = "model-deployment"
+version = "0.1.0"
+description = "Microservice example"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "flask>=3.1.1",
+    "gpy>=1.13.2",
+    "matplotlib>=3.10.3",
+]
