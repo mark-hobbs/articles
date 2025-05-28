@@ -2,7 +2,7 @@
 
 A visual guide to design space exploration and optimisation
 
- <a href="https://colab.research.google.com/github/mark-hobbs/design-space-exploration/blob/main/design-space-exploration.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+ <a href="https://colab.research.google.com/github/mark-hobbs/articles/blob/main/design-space-exploration/design-space-exploration.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
 ## Motivation
 
