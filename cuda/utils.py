@@ -10,25 +10,28 @@ def profile(runs=100):
         def wrapper(*args, **kwargs):
             times = []
             result = None
-            
+
             for i in range(runs):
                 start = time.time()
                 result = func(*args, **kwargs)
                 end = time.time()
                 times.append(end - start)
-            
+
             avg_time = sum(times) / len(times)
             print(f"Function '{func.__name__}' executed {runs} time(s)")
             print(f"Average execution time: {avg_time:.4f} seconds")
-            
+
             if runs > 1:
                 min_time = min(times)
                 max_time = max(times)
                 print(f"Min: {min_time:.4f}s, Max: {max_time:.4f}s\n")
-            
+
             return result
+
         return wrapper
+
     return decorator
+
 
 def timer(func):
     @wraps(func)
@@ -40,6 +43,7 @@ def timer(func):
         return result
 
     return wrapper
+
 
 def get_cuda_device_info(verbose=True):
     """
@@ -71,7 +75,7 @@ def get_cuda_device_info(verbose=True):
             "max_grid_dimensions": {
                 "x": device.MAX_GRID_DIM_X,
                 "y": device.MAX_GRID_DIM_Y,
-                "z": device.MAX_GRID_DIM_Z
+                "z": device.MAX_GRID_DIM_Z,
             },
             "warp_size": device.WARP_SIZE,
             "clock_rate_khz": device.CLOCK_RATE,
@@ -81,7 +85,9 @@ def get_cuda_device_info(verbose=True):
         if verbose:
             print("CUDA Device Information:")
             print("-" * 40)
-            print(f"{'CUDA Runtime Version:':<30} {device_info['cuda_runtime_version']}")
+            print(
+                f"{'CUDA Runtime Version:':<30} {device_info['cuda_runtime_version']}"
+            )
             print(f"{'Device Name:':<30} {device_info['name']}")
             print(f"{'Compute Capability:':<30} {device_info['compute_capability']}")
 
@@ -90,18 +96,30 @@ def get_cuda_device_info(verbose=True):
             print(f"{'Free Memory:':<30} {device_info['free_memory_gb']:.2f} GB")
 
             print("\nCompute Resources:")
-            print(f"{'Streaming Multiprocessors:':<30} {device_info['multiprocessors']}")
-            print(f"{'Max Threads per Block:':<30} {device_info['max_threads_per_block']}")
+            print(
+                f"{'Streaming Multiprocessors:':<30} {device_info['multiprocessors']}"
+            )
+            print(
+                f"{'Max Threads per Block:':<30} {device_info['max_threads_per_block']}"
+            )
 
             print("\nGrid Limitations:")
-            print(f"{'Max Grid Dimensions X:':<30} {device_info['max_grid_dimensions']['x']}")
-            print(f"{'Max Grid Dimensions Y:':<30} {device_info['max_grid_dimensions']['y']}")
-            print(f"{'Max Grid Dimensions Z:':<30} {device_info['max_grid_dimensions']['z']}")
+            print(
+                f"{'Max Grid Dimensions X:':<30} {device_info['max_grid_dimensions']['x']}"
+            )
+            print(
+                f"{'Max Grid Dimensions Y:':<30} {device_info['max_grid_dimensions']['y']}"
+            )
+            print(
+                f"{'Max Grid Dimensions Z:':<30} {device_info['max_grid_dimensions']['z']}"
+            )
 
             print("\nAdditional Characteristics:")
             print(f"{'Warp Size:':<30} {device_info['warp_size']}")
             print(f"{'Clock Rate:':<30} {device_info['clock_rate_khz']/1e6:.2f} GHz")
-            print(f"{'Memory Clock Rate:':<30} {device_info['memory_clock_rate_khz']/1e6:.2f} GHz")
+            print(
+                f"{'Memory Clock Rate:':<30} {device_info['memory_clock_rate_khz']/1e6:.2f} GHz"
+            )
 
         return device_info if not verbose else None
 
