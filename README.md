@@ -12,6 +12,5 @@ This repository contains implementations and illustrative code to accompany the 
 | Visualising Gaussian processes | [gp](/gp/) | [mark-hobbs.github.io/posts/gp](https://mark-hobbs.github.io/posts/gp) | Draft |
 | CUDA | [cuda](/cuda/) | - | Draft |
 | MCMC | [mcmc](/mcmc/) | - | Draft |
-| VAE | [vae](/vae/) | - | Draft |
 | Model calibration | [model-calibration](/model-calibration/) | - | Draft |
 | Model interface | [model-interface](/model-interface/) | - | Draft |
