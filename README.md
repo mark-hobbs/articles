@@ -1,6 +1,6 @@
 # Articles
 
-This repository contains implementations and illustrative code to accompany the articles on my personal site.
+This repository contains implementations and illustrative code to accompany the articles on my [personal site](https://mark-hobbs.github.io/).
 
 | Title | Code | Article | Status |
 | ----- | ---- | ------- | ------ |
